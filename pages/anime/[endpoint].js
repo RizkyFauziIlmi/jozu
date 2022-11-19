@@ -4,7 +4,6 @@ import { useRouter } from "next/router"
 
 export default function Anime({ datas }) {
     const router = useRouter()
-    const { endpoint } = router.query
 
     if (datas === undefined) {
         return (

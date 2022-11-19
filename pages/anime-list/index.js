@@ -1,4 +1,3 @@
-import { Button, Heading, ListItem, UnorderedList } from "@chakra-ui/react"
 import Head from "next/head"
 import List from "../../components/List"
 

@@ -1,4 +1,4 @@
-import { Button, Flex, Grid, GridItem, IconButton, Text } from "@chakra-ui/react"
+import { Flex, Grid, GridItem, IconButton, Text } from "@chakra-ui/react"
 import { useRouter } from "next/router"
 import Card from "../../components/Card"
 import { MdFirstPage, MdLastPage } from 'react-icons/md'

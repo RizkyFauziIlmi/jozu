@@ -1,4 +1,4 @@
-import { Flex, Grid, GridItem, IconButton, Text } from "@chakra-ui/react"
+import { Flex, Grid, GridItem, IconButton, Text, Image } from "@chakra-ui/react"
 import { useRouter } from "next/router"
 import Card from "../../components/Card"
 import { MdFirstPage, MdLastPage } from 'react-icons/md'
@@ -6,7 +6,20 @@ import Head from "next/head"
 
 export default function OngoingPage({ datas }) {
     const router = useRouter()
-    const { page } = router.query
+    
+    if (datas === undefined) {
+        return (
+            <>
+                <Head>
+                    <title>Loading...</title>
+                </Head>
+                <Flex width={"100%"} height={'100%'} justifyContent={'center'} alignItems={'center'}>
+                    <Image boxShadow={'dark-lg'} borderRadius={'1rem'} src="https://media.tenor.com/Gv1cMkqev0wAAAAC/anime-confused.gif" alt="loading" />
+                </Flex>
+            </>
+        )
+    }
+
     return (
         <>
             <Head>

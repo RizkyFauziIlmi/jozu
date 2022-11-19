@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import { ChakraProvider, Flex, Image, Spinner } from '@chakra-ui/react'
+import { ChakraProvider, Flex, Image } from '@chakra-ui/react'
 import Layout from '../components/Layout'
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';

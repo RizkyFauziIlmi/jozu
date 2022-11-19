@@ -21,22 +21,27 @@ export default function CompletedPage({ datas }) {
     }
 
     return (
-        <Flex flexDir={'column'} alignItems={'center'}>
-            <Grid templateColumns={"repeat(4, 1fr)"} p={'2rem'} gap={'1rem'}>
-                {datas.completed.map((value, index) => {
-                    return(
-                        <GridItem key={index}>
-                            <Card data={value}/>
-                        </GridItem>
-                    ) 
-                })}
-            </Grid>
-            <Flex alignItems={'center'} gap={'0.3rem'} fontWeight={'bold'} pb={"0.5rem"}>
-                <IconButton icon={<MdFirstPage />} disabled={datas.currentPage === "1" ? true : false} onClick={() => router.push(`/completed/${parseInt(datas.currentPage) - 1}`)}/> 
-                <Text>{datas.currentPage}</Text>
-                <IconButton icon={<MdLastPage />} disabled={datas.currentPage === "46" ? true : false} onClick={() => router.push(`/completed/${parseInt(datas.currentPage) + 1}`)} />
+        <>
+            <Head>
+                <title>{`Completed | ${datas.currentPage}`}</title>
+            </Head>
+            <Flex flexDir={'column'} alignItems={'center'}>
+                <Grid templateColumns={"repeat(4, 1fr)"} p={'2rem'} gap={'1rem'}>
+                    {datas.completed.map((value, index) => {
+                        return(
+                            <GridItem key={index}>
+                                <Card data={value}/>
+                            </GridItem>
+                        ) 
+                    })}
+                </Grid>
+                <Flex alignItems={'center'} gap={'0.3rem'} fontWeight={'bold'} pb={"0.5rem"}>
+                    <IconButton icon={<MdFirstPage />} disabled={datas.currentPage === "1" ? true : false} onClick={() => router.push(`/completed/${parseInt(datas.currentPage) - 1}`)}/> 
+                    <Text>{datas.currentPage}</Text>
+                    <IconButton icon={<MdLastPage />} disabled={datas.currentPage === "46" ? true : false} onClick={() => router.push(`/completed/${parseInt(datas.currentPage) + 1}`)} />
+                </Flex>
             </Flex>
-        </Flex>
+        </>
     )
 }
 

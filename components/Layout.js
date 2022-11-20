@@ -4,9 +4,9 @@ import RightNavbar from "./RightNavbar";
 
 export default function Layout({ children }) {
     return(
-        <Flex justifyContent={'space-between'}>
+        <Flex justifyContent={'space-between'} flexDir={['column-reverse','column-reverse','column-reverse','row']}>
             <LeftNavbar />
-            <Flex flexDir={'column'} width={'65vw'} height={'100vh'} overflowY={'auto'}>{children}</Flex>
+            <Flex flexDir={'column'} width={['100vw','100vw','100vw','65vw']} height={'100vh'} overflowY={'auto'}>{children}</Flex>
             <RightNavbar />
         </Flex>
     )

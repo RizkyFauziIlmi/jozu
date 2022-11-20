@@ -6,17 +6,17 @@ import { MdSettings } from 'react-icons/md'
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function LeftNavbar() {
+export default function LeftNavbar({ display = "" }) {
     const router = useRouter()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { setColorMode, colorMode } = useColorMode()
     const [theme, setTheme] = useState(colorMode)
 
     return (
-        <Flex flexDir={'column'} p={'2rem'} overflow={'auto'} width={'15vw'} height={'100vh'} borderRight={"0.5px solid black"}>
+        <Flex flexDir={'column'} display={display === "" ? ['none', 'none', 'none', 'flex'] : 'flex'} p={'2rem'} overflow={'auto'} width={['100%', '100%', '100%', '15vw']} height={'100vh'} borderRight={['none', 'none', 'none', "0.5px solid black"]}>
             <Flex pb={'2rem'} gap={'0.5rem'} alignItems={'center'}>
                 <FcFilmReel />
-                <Heading fontSize={'2xl'}>Jozu</Heading>
+                <Heading fontSize={'2xl'} onClick={() => router.push("/")} cursor={'pointer'}>Jozu</Heading>
             </Flex>
             <Flex flexDir={'column'} gap={'1rem'}>
                 <Flex flexDir={"column"} gap={'0.5rem'}>
@@ -45,7 +45,7 @@ export default function LeftNavbar() {
                         <Heading size={'md'} pb={'0.5rem'}>Appereance</Heading>
                         <Divider />
                         <Heading size={'sm'}>Theme</Heading>
-                        <RadioGroup onChange={setTheme} defaultValue={colorMode}> 
+                        <RadioGroup onChange={setTheme} defaultValue={colorMode}>
                             <HStack spacing={2}>
                                 <Radio value='dark'>Dark</Radio>
                                 <Radio value='light'>Light</Radio>

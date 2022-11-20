@@ -23,12 +23,12 @@ export default function Home({ dataOngoing, dataComplete }) {
             aspectRatio: '16/9'
           }}
         />
-      <Flex p={'2rem'} flexDir={'column'}>
+      <Flex p={'2rem'} flexDir={'column'} alignItems={'center'}>
         <Flex pb={'1rem'} width={'100%'} alignItems={'center'} justifyContent={'space-between'}>
           <Heading fontSize={'md'}>Now Playing</Heading>
           <IconButton icon={<BsChevronRight />} variant={'outline'} onClick={() => router.push("/ongoing")} />
         </Flex>
-        <Flex gap={"1rem"}>
+        <Flex gap={"1rem"} flexDir={['column','column','column','row']}>
           {dataOngoing.map((value, index) => {
             return (
               <Card key={index} data={value} />
@@ -39,7 +39,7 @@ export default function Home({ dataOngoing, dataComplete }) {
           <Heading fontSize={'md'}>Completed Anime</Heading>
           <IconButton icon={<BsChevronRight />} variant={'outline'} onClick={() => router.push("/completed")} />
         </Flex>
-        <Flex gap={"1rem"}>
+        <Flex gap={"1rem"} flexDir={['column','column','column','row']}>
           {dataComplete.map((value, index) => {
             return (
               <Card key={index} data={value} />

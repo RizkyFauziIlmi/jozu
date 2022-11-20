@@ -1,20 +1,14 @@
 import { Button, Flex, Heading, Image, Text } from "@chakra-ui/react"
 import Head from "next/head"
 import { useRouter } from "next/router"
+import Loading from "../../components/Loading"
 
 export default function Anime({ datas }) {
     const router = useRouter()
 
     if (datas === undefined) {
         return (
-            <>
-                <Head>
-                    <title>Loading...</title>
-                </Head>
-                <Flex width={"100%"} height={'100%'} justifyContent={'center'} alignItems={'center'}>
-                    <Image boxShadow={'dark-lg'} borderRadius={'1rem'} src="https://media.tenor.com/Gv1cMkqev0wAAAAC/anime-confused.gif" alt="loading" />
-                </Flex>
-            </>
+            <Loading />
         )
     }
 
@@ -25,8 +19,8 @@ export default function Anime({ datas }) {
             </Head>        
             <Flex p={'2rem'} flexDir={'column'}>
                 <Heading pb={'2.5rem'} size={'lg'}>{datas.anime_detail.title}</Heading>
-                <Flex gap={'1rem'}>
-                    <Image width={'20vw'} borderRadius={'lg'} boxShadow={'dark-lg'} alt={datas.anime_detail.thumb} src={datas.anime_detail.thumb} />
+                <Flex gap={'1rem'} flexDir={['column','column','column','row']}>
+                    <Image width={['100vw','100vw','100vw','20vw']} borderRadius={'lg'} boxShadow={'dark-lg'} alt={datas.anime_detail.thumb} src={datas.anime_detail.thumb} />
                     <Flex flexDir={'column'} gap={'0.5rem'} justifyContent={'space-between'}>
                         {datas.anime_detail.detail.map((value, index) => {
                             return (
@@ -45,16 +39,16 @@ export default function Anime({ datas }) {
                 <Flex flexDir={'column'} gap={'0.5rem'} pt={'3rem'}>
                     {datas.episode_list.map((value, index) => {
                         return(
-                            <Button key={index} onClick={() => {
+                            <Button overflowX={'auto'} overflowY={'hidden'} p={'0.5rem'} key={index} onClick={() => {
                                 if (value.episode_title.includes("BATCH")) {
                                     router.push(`/batch/${value.episode_endpoint}`)
                                 } else {
                                     router.push(`/episode/${value.episode_endpoint}`)
                                 }
                             }}>
-                                <Flex justifyContent={'space-between'} width={'100%'}>
+                                <Flex flexDir={['column','column','column','row']} alignItems={'start'} justifyContent={'space-between'} width={'100%'}>
                                     <Text noOfLines={1}>{value.episode_title}</Text>
-                                    <Text>{value.episode_date}</Text>
+                                    <Text opacity={0.5}>{value.episode_date}</Text>
                                 </Flex>
                             </Button>
                         )

@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Loading from '../components/Loading';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -29,13 +30,8 @@ function MyApp({ Component, pageProps }) {
   if (loading) {
     return (
       <ChakraProvider>
-        <Head>
-          <title>Loading...</title>
-        </Head>
         <Layout>
-          <Flex width={"100%"} height={'100%'} justifyContent={'center'} alignItems={'center'}>
-            <Image boxShadow={'dark-lg'} borderRadius={'1rem'} src="https://media.tenor.com/Gv1cMkqev0wAAAAC/anime-confused.gif" alt="loading" />
-          </Flex>
+          <Loading />
         </Layout>
       </ChakraProvider>
     )

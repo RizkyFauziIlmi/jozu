@@ -1,4 +1,4 @@
-import { Flex, Grid, GridItem, IconButton, Text } from "@chakra-ui/react"
+import { Flex, Grid, GridItem, Heading, IconButton, Text } from "@chakra-ui/react"
 import { useRouter } from "next/router"
 import Card from "../../components/Card"
 import { MdFirstPage, MdLastPage } from 'react-icons/md'
@@ -12,7 +12,8 @@ export default function Ongoing({ datas }) {
                 <title>{`Ongoing | ${datas.currentPage}`}</title>
             </Head>
             <Flex flexDir={'column'} alignItems={'center'}>
-                <Grid templateColumns={"repeat(4, 1fr)"} p={'2rem'} gap={'1rem'}>
+                <Heading display={['block', 'block', 'block', 'none']}>Ongoing</Heading>
+                <Grid templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(4, 1fr)"]} p={'2rem'} gap={'1rem'}>
                     {datas.ongoing.map((value, index) => {
                         return(
                             <GridItem key={index}>

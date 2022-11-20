@@ -1,22 +1,16 @@
-import { Flex, Grid, GridItem, IconButton, Text, Image } from "@chakra-ui/react"
+import { Flex, Grid, GridItem, IconButton, Text, Image, Heading } from "@chakra-ui/react"
 import { useRouter } from "next/router"
 import Card from "../../components/Card"
 import { MdFirstPage, MdLastPage } from 'react-icons/md'
 import Head from "next/head"
+import Loading from "../../components/Loading"
 
 export default function OngoingPage({ datas }) {
     const router = useRouter()
     
     if (datas === undefined) {
         return (
-            <>
-                <Head>
-                    <title>Loading...</title>
-                </Head>
-                <Flex width={"100%"} height={'100%'} justifyContent={'center'} alignItems={'center'}>
-                    <Image boxShadow={'dark-lg'} borderRadius={'1rem'} src="https://media.tenor.com/Gv1cMkqev0wAAAAC/anime-confused.gif" alt="loading" />
-                </Flex>
-            </>
+            <Loading />
         )
     }
 
@@ -26,7 +20,8 @@ export default function OngoingPage({ datas }) {
                 <title>{`Ongoing | ${datas.currentPage}`}</title>
             </Head>
             <Flex flexDir={'column'} alignItems={'center'}>
-                <Grid templateColumns={"repeat(4, 1fr)"} p={'2rem'} gap={'1rem'}>
+                <Heading display={['block', 'block', 'block', 'none']}>Ongoing</Heading>
+                <Grid templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(4, 1fr)"]} p={'2rem'} gap={'1rem'}>
                     {datas.ongoing.map((value, index) => {
                         return (
                             <GridItem key={index}>

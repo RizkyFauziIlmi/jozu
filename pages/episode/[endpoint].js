@@ -64,7 +64,7 @@ export default function Episode({ datas }) {
 export async function getStaticPaths() {
     return {
         paths: [
-            { params: { endpoint: "/api/v1/episode/kdjns-episode-11-sub-indo" || null } }
+            { params: { endpoint: "kdjns-episode-11-sub-indo" || null } }
         ],
         fallback: true
     }

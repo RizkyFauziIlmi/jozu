@@ -32,7 +32,7 @@ export default function Episode({ datas }) {
                         allowFullScreen
                     />
                     :
-                    <Flex zIndex={fullscreen ? 99999 : 'unset'} bgColor={'red'} top={0} left={0} right={0} bottom={0} position={fullscreen ? 'absolute' : 'relative'}>
+                    <Flex zIndex={fullscreen ? 99999 : 'unset'} background={'url("https://media.tenor.com/Gv1cMkqev0wAAAAC/anime-confused.gif")'} top={0} left={0} right={0} bottom={0} position={fullscreen ? 'absolute' : 'relative'}>
                         <Iframe
                             url={src === "" ? datas.streamLink : src}
                             width='100%'
@@ -42,7 +42,6 @@ export default function Episode({ datas }) {
                         <IconButton colorScheme={'green'} bottom={5} right={5} onClick={() => setFullscreen(!fullscreen)} position={'absolute'} icon={fullscreen ? <BsFullscreenExit /> : <BsFullscreen />} />
                     </Flex>
                 }
-                {`${fullscreen}`}
                 <Flex gap={'0.5rem'} p={'1rem'} flexWrap={'wrap'} justifyContent={'center'}>
                     {datas?.relative.map((value, index) => {
                         return (

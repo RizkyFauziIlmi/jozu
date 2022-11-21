@@ -38,7 +38,7 @@ export default function Search({ datas }) {
 export async function getStaticPaths() {
     return {
         paths: [
-            { params: { query: "https://otakudesu-anime-api.vercel.app/api/v1/search/oregairu" || null } }
+            { params: { query: "oregairu" || null } }
         ],
         fallback: true
     }

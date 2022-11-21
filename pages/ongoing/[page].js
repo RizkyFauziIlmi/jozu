@@ -7,7 +7,7 @@ import Loading from "../../components/Loading"
 
 export default function OngoingPage({ datas }) {
     const router = useRouter()
-    
+
     if (datas === undefined) {
         return (
             <Loading />
@@ -21,7 +21,7 @@ export default function OngoingPage({ datas }) {
             </Head>
             <Flex flexDir={'column'} alignItems={'center'}>
                 <Heading display={['block', 'block', 'block', 'none']}>Ongoing</Heading>
-                <Grid templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(4, 1fr)"]} p={'2rem'} gap={'1rem'}>
+                <Grid templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"]} p={'2rem'} gap={'1rem'}>
                     {datas.ongoing.map((value, index) => {
                         return (
                             <GridItem key={index}>

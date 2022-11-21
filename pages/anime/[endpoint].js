@@ -15,12 +15,12 @@ export default function Anime({ datas }) {
     return (
         <>
             <Head>
-                <title>{datas.anime_detail.title}</title>    
-            </Head>        
+                <title>{datas.anime_detail.title}</title>
+            </Head>
             <Flex p={'2rem'} flexDir={'column'}>
                 <Heading pb={'2.5rem'} size={'lg'}>{datas.anime_detail.title}</Heading>
-                <Flex gap={'1rem'} flexDir={['column','column','column','row']}>
-                    <Image width={['100vw','100vw','100vw','20vw']} borderRadius={'lg'} boxShadow={'dark-lg'} alt={datas.anime_detail.thumb} src={datas.anime_detail.thumb} />
+                <Flex gap={'1rem'} flexDir={['column', 'column', 'column', 'row']}>
+                    <Image width={['100vw', '100vw', '100vw', '20vw']} borderRadius={'lg'} boxShadow={'dark-lg'} alt={datas.anime_detail.thumb} src={datas.anime_detail.thumb} />
                     <Flex flexDir={'column'} gap={'0.5rem'} justifyContent={'space-between'}>
                         {datas.anime_detail.detail.map((value, index) => {
                             return (
@@ -38,7 +38,7 @@ export default function Anime({ datas }) {
                 })}
                 <Flex flexDir={'column'} gap={'0.5rem'} pt={'3rem'}>
                     {datas.episode_list.map((value, index) => {
-                        return(
+                        return (
                             <Button overflowX={'auto'} overflowY={'hidden'} p={'0.5rem'} key={index} onClick={() => {
                                 if (value.episode_title.includes("BATCH")) {
                                     router.push(`/batch/${value.episode_endpoint}`)
@@ -46,7 +46,7 @@ export default function Anime({ datas }) {
                                     router.push(`/episode/${value.episode_endpoint}`)
                                 }
                             }}>
-                                <Flex flexDir={['column','column','column','row']} alignItems={'start'} justifyContent={'space-between'} width={'100%'}>
+                                <Flex flexDir={['column', 'column', 'column', 'row']} alignItems={'start'} justifyContent={'space-between'} width={'100%'}>
                                     <Text noOfLines={1}>{value.episode_title}</Text>
                                     <Text opacity={0.5}>{value.episode_date}</Text>
                                 </Flex>

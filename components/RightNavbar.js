@@ -31,7 +31,7 @@ export default function RightNavbar() {
                 <InputLeftElement>
                     <BsSearch />
                 </InputLeftElement>
-                <Input borderRadius={"2xl"} placeholder="Title...." onChange={(e) => setInput(e.target.value)}/>
+                <Input borderRadius={"2xl"} placeholder="Title...." onChange={(e) => setInput(e.target.value)} />
                 <InputRightElement width='5rem'>
                     <Button onClick={() => router.push(`/search/${input}`)} h='1.75rem' size='sm' display={input === "" ? 'none' : 'block'}>Search</Button>
                 </InputRightElement>
@@ -48,7 +48,7 @@ export default function RightNavbar() {
                     <DrawerCloseButton />
 
                     <DrawerBody>
-                        <LeftNavbar display={isOpen ? 'flex' : ""}/>
+                        <LeftNavbar display={isOpen ? 'flex' : ""} />
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

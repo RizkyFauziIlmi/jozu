@@ -2,12 +2,12 @@ import { Button, UnorderedList, ListItem, Heading, Divider, Flex, Text } from "@
 import { useRouter } from "next/router"
 
 export default function List({ datas, filter }) {
-    const router =  useRouter()
+    const router = useRouter()
 
     return (
         <Flex flexDir={'column'}>
-            <Heading size={'sm'}>{filter}</Heading> 
-            <Divider />       
+            <Heading size={'sm'}>{filter}</Heading>
+            <Divider />
             <UnorderedList>
                 {datas.manga_list.filter(value => value.title.startsWith(`${filter}`)).map((value, index) => {
                     return (

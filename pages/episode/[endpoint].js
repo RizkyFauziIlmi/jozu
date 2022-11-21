@@ -24,7 +24,7 @@ export default function Episode({ datas }) {
                 <title>{datas?.title}</title>
             </Head>
             <Flex flexDir={'column'} p={'2rem'} overflowX={'hidden'} alignItems={'center'} width={'100%'} height={'100vh'}>
-                <Heading fontSize={['md','md','md','2xl']} p={'1rem'}>{datas?.title}</Heading>
+                <Heading fontSize={['md', 'md', 'md', '2xl']} p={'1rem'}>{datas?.title}</Heading>
                 {src === ""
                     ? <Iframe
                         url={src === "" ? datas.streamLink : src}

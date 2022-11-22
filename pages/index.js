@@ -14,7 +14,7 @@ export default function Home({ dataOngoing, dataComplete }) {
       </Head>
       <Box
         as='iframe'
-        src='https://www.youtube.com/embed/8nKJCNgiVhc?autoplay=1&mute=1&controls=0&loop=1'
+        src='https://www.youtube.com/embed/8nKJCNgiVhc?autoplay=1&mute=1&controls=0&looping=1'
         width='100%'
         pt={'2rem'}
         height={"50vh"}

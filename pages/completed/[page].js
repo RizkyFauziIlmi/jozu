@@ -21,7 +21,7 @@ export default function CompletedPage({ datas }) {
             </Head>
             <Flex flexDir={'column'} alignItems={'center'}>
                 <Heading display={['block', 'block', 'block', 'none']}>Completed</Heading>
-                <Grid templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"]} p={'2rem'} gap={'1rem'}>
+                <Grid templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]} p={'2rem'} gap={'1rem'}>
                     {datas.completed.map((value, index) => {
                         return (
                             <GridItem key={index}>

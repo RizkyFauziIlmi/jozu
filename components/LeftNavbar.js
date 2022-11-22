@@ -27,7 +27,7 @@ export default function LeftNavbar({ display = "" }) {
                 </Flex>
                 <Flex flexDir={"column"} gap={'0.5rem'}>
                     <Heading fontSize={'sm'} opacity={0.5} mb={'-0.3rem'}>Category</Heading>
-                    <Button leftIcon={<BsFilm />} width={'max-content'} variant={'unstyled'}>Genres</Button>
+                    <Button bgColor={router.asPath.includes("/genres") ? "#545658" : "unset"} leftIcon={<BsFilm />} variant={'unstyled'} width={router.asPath.includes("/genres") ? '100%' : 'max-content'} onClick={() => router.push("/genres")}>Genres</Button>
                     <Button leftIcon={<BsListUl />} variant={'unstyled'} bgColor={router.asPath.includes("/anime-list") ? "#545658" : "unset"} width={router.asPath.includes("/anime-list") ? '100%' : 'max-content'} onClick={() => router.push("/anime-list")}>Anime List</Button>
                 </Flex>
                 <Flex flexDir={"column"} gap={'0.5rem'}>

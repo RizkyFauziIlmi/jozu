@@ -20,6 +20,7 @@ export default function Genre({ datas }) {
             <Head>
                 <title>{`${endpoint} | ${page}`}</title>
             </Head>
+            {console.log(datas)}
             <Flex flexDir={'column'} alignItems={'center'}>
                 <Heading display={['block', 'block', 'block', 'none']}>{`${endpoint} Genre`}</Heading>
                 <Grid templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]} p={'2rem'} gap={'1rem'}>
